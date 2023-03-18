@@ -8,12 +8,13 @@ public class GuessTheNumber {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("How many times would you like to guess for the number?: ");
-        int guessAttempts = Integer.parseInt(scanner.nextLine());
+        System.out.println("A number between 1 - 100 will be chosen");
+        System.out.println("You will have 5 chances to guess the number");
 
+        int guessAttempts = 5;
 
         while (guessAttempts > 0) {
-            System.out.print("Guess the number!: ");
+            System.out.println("Guess the number: ");
             int userNumberChoice = Integer.parseInt(scanner.nextLine());
             guessAttempts--;
 
@@ -30,7 +31,12 @@ public class GuessTheNumber {
             if (userNumberChoice > randomNumber) {
                 System.out.println("Your number is higher! Try to guess lower!");
             }
+
             System.out.println("");
         }
+
+        System.out.println("You failed to guess the correct number");
+        System.out.println("The correct number was " + randomNumber);
+        System.out.println("Thanks for playing!");
     }
 }
