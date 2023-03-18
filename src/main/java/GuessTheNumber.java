@@ -4,6 +4,10 @@ import java.util.Scanner;
 public class GuessTheNumber {
 
     public static void main(String[] args) {
+        playGuessNumberGame();
+    }
+
+    public static void playGuessNumberGame() {
         int randomNumber = new Random().nextInt(100) + 1;
 
         Scanner scanner = new Scanner(System.in);
@@ -14,14 +18,14 @@ public class GuessTheNumber {
         int guessAttempts = 5;
 
         while (guessAttempts > 0) {
-            System.out.println("Guess the number: ");
+            System.out.print("Guess the number: ");
             int userNumberChoice = Integer.parseInt(scanner.nextLine());
             guessAttempts--;
 
             if (userNumberChoice == randomNumber) {
                 System.out.println("You guessed the correct number!");
                 System.out.println("It was the number " + userNumberChoice);
-                System.exit(0);
+                return;
             }
 
             if (userNumberChoice < randomNumber) {
@@ -35,7 +39,7 @@ public class GuessTheNumber {
             System.out.println("");
         }
 
-        System.out.println("You failed to guess the correct number");
+        System.out.println("You failed to guess the number!");
         System.out.println("The correct number was " + randomNumber);
         System.out.println("Thanks for playing!");
     }
