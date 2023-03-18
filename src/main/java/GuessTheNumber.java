@@ -1,46 +1,27 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class GuessTheNumber {
 
-    // Create a main() method
+    public static void main(String[] args) {
+        int randomNumber = new Random().nextInt(100) + 1;
 
-        // Use the following code to create a random number from 1 to 100:
-        // Note: you may have to import the Random class
-        // int randomNumber = new Random().nextInt(100) + 1;
+        Scanner scanner = new Scanner(System.in);
 
-        // Create a Scanner object
-
-
-        // Create a variable to hold the number of guess attempts, example
-        // int guessAttempts = 6;
+        System.out.print("How many times would you like to guess for the number?: ");
+        int guessAttempts = Integer.parseInt(scanner.nextLine());
 
 
-        // While the user has more than 0 guess attempts...
+        while (guessAttempts > 0) {
+            System.out.print("Guess the number!: ");
+            int userNumberChoice = Integer.parseInt(scanner.nextLine());
+            guessAttempts--;
 
-            // Ask the user for a number between 1 and 100
-
-
-            // If the user's number matches the random number tell the user they guessed correctly!
-            // Stop the program using:
-            // System.exit(0);
-
-
-            // Otherwise, if the user's number is lower than the random number,
-            // tell them they guessed too low
-
-                // Decrease the number of attempts by 1
-
-
-            // Otherwise, tell the user they guessed too high
-
-                // Decrease the number of attempts by 1
-
-
-        // Outside the loop, tell the user they have lost and reveal the random number!
-
-
-
-        /*
-         * Feel free to add any additional rules :)
-         */
+            if (userNumberChoice == randomNumber) {
+                System.out.println("You guessed the correct number!");
+                System.out.println("It was the number " + userNumberChoice);
+                System.exit(0);
+            }
+        }
+    }
 }
