@@ -22,6 +22,15 @@ public class GuessTheNumber {
                 System.out.println("It was the number " + userNumberChoice);
                 System.exit(0);
             }
+
+            if (userNumberChoice < randomNumber) {
+                System.out.println("Your number is lower! Try to guess higher!");
+            }
+
+            if (userNumberChoice > randomNumber) {
+                System.out.println("Your number is higher! Try to guess lower!");
+            }
+            System.out.println("");
         }
     }
 }
