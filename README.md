@@ -9,4 +9,6 @@ The classic game to guess the hidden number in a given number of attempts!
 - In the first game you will get 5 chances to guess the number
 - In the second game you will have 10 chances to guess the number
 
+## How to play
 
+https://replit.com/@jyfoil/guess-the-number?v=1
